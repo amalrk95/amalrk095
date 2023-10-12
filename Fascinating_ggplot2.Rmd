@@ -1,0 +1,35 @@
+## Some nice Charts!!
+
+This session will illustrate the power of graphics to squeze out valuable information for primary analysis.
+
+### Using the data 'mtcars'
+
+```{r}
+# Load data
+data("mtcars")
+dfm <- mtcars
+library(ggpubr)
+# Convert the cyl variable to a factor
+dfm$cyl <- as.factor(dfm$cyl)
+# Add the name colums
+dfm$name <- rownames(dfm)
+# Inspect the data
+head(dfm)
+```
+
+
+
+## Vehicles distribution with number of cylinders 
+
+Create ordered bar plots. Change the fill color by the grouping variable "cyl". Sorting will be done globally, also by groups.
+
+```{r}
+ggbarplot(dfm, x = "name", y = "mpg",
+          fill = "cyl",               # change fill color by cyl
+          color = "white",            # Set bar border colors to white
+          palette = "jco",            # jco journal color palett. see ?ggpar
+          sort.val = "asc",          # Sort the value in ascending("desc /asc") order
+          sort.by.groups = TRUE,      # Don't sort inside each group
+          x.text.angle = 90           # Rotate vertically x axis texts
+          )
+```
