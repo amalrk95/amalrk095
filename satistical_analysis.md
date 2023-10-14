@@ -134,4 +134,11 @@ qqPlot(my_data$len)
 ```
 
 
-## Takeaway from the session
+## Takeaway from the session\
+-Always form good research questions and hypothesis for analysis.
+
+- In case of parametric tests, always make sure that the group of data to be analyzed follows normal distribution.
+
+- If normality can not be maintained, then try non- parametric tests.
+
+- Always use large samples for statistical analysis.
